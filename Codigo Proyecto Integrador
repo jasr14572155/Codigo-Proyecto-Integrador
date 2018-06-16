@@ -1,0 +1,438 @@
+index.php
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+		<title>Creditos Comfandi</title>
+	</head>
+
+	<body>
+        <div class="contenedor">
+            <div class="logo">
+                <img src="img/comfandi.jpg" width="70" alt="Logotipo">
+            </div>
+            
+            <div class="titulo">
+                <h3>Inicio de sesión</h3>
+            </div>
+            
+            <div class="formulario">
+                <form action="php/login.php" method="post">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type=submit value="Iniciar sesión">
+
+                    <a href="#">¿Olvidaste la contraseña?</a>
+                </form>
+            </div>
+        </div>
+	</body>
+</html>
+
+login.php
+
+<?php 
+	require_once "conexion.php";
+
+	
+?>
+
+conexion.php
+
+<?php 	
+	try {
+	 	$conexion = new PDO("mysql:host=localhost;dbname=creditos comfandi", "root", "");
+	} catch (PDOException $e) {
+	 	echo "Error: ".$e->getMessage();
+	} 
+?>
+
+login.css
+
+* {
+	font-family: sans-serif;
+}
+
+body {
+	margin-top: 120px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	background: #D8D7D7;
+}
+
+
+.contenedor {
+	width: 250px;
+	height: 350px;
+	background: #0132CF;
+	padding: 25px 0 0 0;
+	border-radius: 3px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.contenedor .logo img {
+	border-radius: 50%;
+}
+
+.contenedor .titulo {
+	color: #fff;
+}
+
+.contenedor .formulario form {
+	height: 200px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.contenedor .formulario form input {
+	margin: 5px 0;
+	padding: 7px;
+	border: none;
+	border-radius: 2px;
+}
+
+.contenedor .formulario form input[type="submit"] {
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-radius: 2px;
+	font-weight: bold;
+	background: #fff;
+	cursor: pointer;
+	color: #282828;
+}
+
+.contenedor .formulario form input[type="submit"]:hover {
+	background: #C1C1C1;
+}
+
+.contenedor .formulario a {
+	margin: 5px 0;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+ingreso_credito.php
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<title>Ingreso de Creditos</title>
+	</head>
+
+	<body>
+
+		<head>
+			
+			<div>
+				
+				<img src="imagenes/comfandi.jpg" width="70" alt="Logotipo">
+
+			</div>
+
+			<nav>
+				
+				<ul>
+					
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Ingreso de Creditos</a></li>
+					<li><a href="#">Historias clinicas</a></li>
+					<li><a href="#">Imprimir Listados de Creditos</a></li>
+					<li><a href="#">Cuentas Medicas</a></li>
+
+				</ul>
+
+			</nav>
+
+		</head>
+    	
+    	<form>
+
+    		<h1>Registrar Creditos</h1>
+    		<br>
+       		
+
+    		<input type="button" value="Nuevo">
+    		<input type="button" value="Editar">
+    		<input type="button" value="Eliminar">
+    		<input type="button" value="Guardar">
+    		<br><br>
+
+
+    		<table>
+    			<tr>    		
+    		
+		    		<td>Registrar Credito</td>
+		    		<td><input type="text" placeholder="GB"></td>
+		    		<td><input type="text" placeholder="Episodio"></td>
+		    		<td><input type="text" placeholder="Cedula"></td>
+		    		<td>Enviado a Historias</td>
+		    	</tr>
+		    	<tr>
+		    	    <td><input type="checkbox" name="" id="" ></td>	
+		    		<td><input type="text" placeholder="Nombre Paciente"></td>
+		    		<td><input type="text" placeholder="Aseguradora"></td>
+		    		<td><input type="text" placeholder="Fechas"></td>
+		    		<td><input type="checkbox" name="" id=""></td>
+		    	</tr>
+		    	<tr>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    	</tr>
+		    	
+
+    		</table>
+
+    	</form>   
+	</body>
+</html>
+
+historias_clinicas.php
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Historias Clinicas</title>
+	</head>
+
+	<body>
+
+		<head>
+			
+			<div>
+				
+				<img src="imagenes/comfandi.jpg" width="70" alt="Logotipo">
+
+			</div>
+
+			<nav>
+				
+				<ul>
+					
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Ingreso de Creditos</a></li>
+					<li><a href="#">Historias clinicas</a></li>
+					<li><a href="#">Imprimir Listados de Creditos</a></li>
+					<li><a href="#">Cuentas Medicas</a></li>
+
+				</ul>
+
+			</nav>
+
+		</head>
+    	
+    	<form>
+
+    		<h1>Imprimir Historias Clinicas</h1>
+    		<br>
+       		
+
+    		<input type="button" value="Guardar">
+    		<input type="button" value="Imprimir">
+    		<br><br>
+
+
+    		<table>
+    			<tr>    		
+    		
+		    		<td>Recibido en Historias</td>
+		    		<td><input type="text" placeholder="GB"></td>
+		    		<td><input type="text" placeholder="Episodio"></td>
+		    		<td><input type="text" placeholder="Cedula"></td>
+		    		<td>Credito con Historia</td>
+		    	</tr>
+		    	<tr>
+		    	    <td><input type="checkbox" name="" id="" ></td>	
+		    		<td><input type="text" placeholder="Nombre Paciente"></td>
+		    		<td><input type="text" placeholder="Aseguradora"></td>
+		    		<td><input type="text" placeholder="Fechas"></td>
+		    		<td><input type="checkbox" name="" id=""></td>
+		    	</tr>
+		    	<tr>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    	</tr>
+		    	
+
+    		</table>
+
+    	</form>   
+	</body>
+</html>
+
+
+imprimir_reporte.php
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<title>Imprimir Reporte de Creditos</title>
+	</head>
+
+	<body>
+
+		<head>
+			
+			<div>
+				
+				<img src="imagenes/comfandi.jpg" width="70" alt="Logotipo">
+
+			</div>
+
+			<nav>
+				
+				<ul>
+					
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Ingreso de Creditos</a></li>
+					<li><a href="#">Historias clinicas</a></li>
+					<li><a href="#">Imprimir Listados de Creditos</a></li>
+					<li><a href="#">Cuentas Medicas</a></li>
+
+				</ul>
+
+			</nav>
+
+		</head>
+    	
+    	<form>
+
+    		<h1>Imprimir listado de Creditos</h1>
+    		<br>
+       		
+
+    		<input type="button" value="Guardar">
+    		<input type="button" value="Imprimir">
+    		<br><br>
+
+
+    		<table>
+    			<tr>    		
+    		
+		    		<td>Imprimir Lista de Creditos</td>
+		    		<td><input type="text" placeholder="GB"></td>
+		    		<td><input type="text" placeholder="Episodio"></td>
+		    		<td><input type="text" placeholder="Cedula"></td>
+		    		<td>Enviar a Cuentas Medicas</td>
+		    	</tr>
+		    	<tr>
+		    	    <td><input type="checkbox" name="" id="" ></td>	
+		    		<td><input type="text" placeholder="Nombre Paciente"></td>
+		    		<td><input type="text" placeholder="Aseguradora"></td>
+		    		<td><input type="text" placeholder="Fechas"></td>
+		    		<td><input type="checkbox" name="" id=""></td>
+		    	</tr>
+		    	<tr>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    	</tr>
+		    	
+
+    		</table>
+
+    	</form>   
+	</body>
+</html>
+
+cuentas_medicas.php
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<title>Cuentas Medicas</title>
+	</head>
+
+	<body>
+
+		<head>
+			
+			<div>
+				
+				<img src="imagenes/comfandi.jpg" width="70" alt="Logotipo">
+
+			</div>
+
+			<nav>
+				
+				<ul>
+					
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Ingreso de Creditos</a></li>
+					<li><a href="#">Historias clinicas</a></li>
+					<li><a href="#">Imprimir Listados de Creditos</a></li>
+					<li><a href="#">Cuentas Medicas</a></li>
+
+				</ul>
+
+			</nav>
+
+		</head>
+    	
+    	<form>
+
+    		<h1>Cuentas Medicas</h1>
+    		<br>
+       		
+
+    		<input type="button" value="Guardar">
+    		<input type="button" value="Radicar">
+    		<input type="button" value="Imprimir">
+    		<br><br>
+
+
+    		<table>
+    			<tr>    		
+    		
+		    		<td>Creditos para Radicar</td>
+		    		<td><input type="text" placeholder="GB"></td>
+		    		<td><input type="text" placeholder="Episodio"></td>
+		    		<td><input type="text" placeholder="Cedula"></td>
+		    		<td>Radicados</td>
+		    	</tr>
+		    	<tr>
+		    	    <td><input type="checkbox" name="" id="" ></td>	
+		    		<td><input type="text" placeholder="Nombre Paciente"></td>
+		    		<td><input type="text" placeholder="Aseguradora"></td>
+		    		<td><input type="text" placeholder="Fechas"></td>
+		    		<td><input type="checkbox" name="" id=""></td>
+		    	</tr>
+		    	<tr>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td><input type="text" placeholder="observaciones"></td>
+		    	</tr>
+		    	
+
+    		</table>
+
+    	</form>   
+	</body>
+</html>
